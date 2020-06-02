@@ -6,7 +6,7 @@ $version = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $string);
 
 $previous = file_get_contents('version.txt');
 
-if (strcmp($previous, $version) !== 0) {
+if (strcmp($previous, $version) !== 0 && !empty($version)) {
     $post = [
         "username" => "POGO-Version",
         "embeds" => [[
